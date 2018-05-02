@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Samuel L. Jackson",
+    "clicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Samuel_L._Jackson_SDCC_2014_%28cropped%29.jpg/800px-Samuel_L._Jackson_SDCC_2014_%28cropped%29.jpg"
+  },
+  {
+    "id": 2,
+    "name": "John Amos",
+    "clicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/John_Amos_2011.jpg/800px-John_Amos_2011.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Richard Pryor",
+    "clicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/b/bb/Richard_Pryor_%281986%29_%28cropped%29.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Spike Lee",
+    "clicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Spike_Lee_at_the_2009_Tribeca_Film_Festival.jpg/800px-Spike_Lee_at_the_2009_Tribeca_Film_Festival.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Ice-T",
+    "clicked": false,
+    "image":
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ice_T_SVU_March_2011_%28cropped%29.jpg/800px-Ice_T_SVU_March_2011_%28cropped%29.jpg"
+  },
+]
