@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import clickme from "../clickme";
+import ClickMe from "../ClickMe";
+import images from "../../images.json";
 import "./gamescreen.css";
 
-// import images from "../../images.json";
-
-
-class MainScreen extends Component {
+class GameScreen extends Component {
 	state = {
 		images,
-		message: "Click an image to begin!",
+		message: "Click a photo below to begin the game. But click a photo once or you will lose the game.",
 		score: 0,
 		topScore: 0
 	};
@@ -23,7 +21,6 @@ class MainScreen extends Component {
 			});
 			return this.setState({
 				image: imageOrder.sort(() => Math.random() - 0.5),
-				message: "You Guessed Incorrectly!",
 				score: 0
 			})
 		}
@@ -35,12 +32,13 @@ class MainScreen extends Component {
 			});
 
 			const {topScore, score} = this.state;
+			
 			const newScore = score ++;
+			
 			const newTopScore = newScore > topScore ? newScore : topScore;
 
 			return this.setState({
 				image: imageOrder.sort(() => Math.random() - 0.5),
-				message: "You Guessed Correctly!",
 				score: newScore,
 				topScore: newTopScore,
 			})
@@ -50,16 +48,21 @@ class MainScreen extends Component {
 	render() {
 		return (
 			<div className="container-fluid mainCardContainer">
-				<div className="gameMessage text-center">
-					<p>{this.state.message}</p>
-				</div>
+				// <div className="gameMessage text-center">
+				// 	<p>{this.state.message}</p>
+				// </div>
 				<div className="gameScores text-center">
-					<p>Score: {this.state.score} | Top Score: {this.state.topScore}</p>
+					<p>Score: {this.state.score}</p>
 				</div>
+
+				<div className="gameScores text-center">
+					<p>Top Score: {this.state.topScore}</p>
+				</div>
+
 				<div className="container">	
 					<div className="row">
 						{this.state.images.map(image => (
-							<MemoryCard
+							<ClickMe
 								key={image.id}
 								id={image.id}
 								name={image.name}
@@ -75,4 +78,4 @@ class MainScreen extends Component {
 	}
 };
 
-export default gamescreen;
+export default GameScreen;
