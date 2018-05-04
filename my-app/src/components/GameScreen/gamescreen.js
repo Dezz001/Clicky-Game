@@ -34,7 +34,7 @@ class GameScreen extends Component {
 
 			const {topScore, score} = this.state;
 			
-			const newScore = score ++;
+			const newScore = score + 1;
 			
 			const newTopScore = newScore > topScore ? newScore : topScore;
 
