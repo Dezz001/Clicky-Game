@@ -1,10 +1,10 @@
 
-import React from "react";
-import Header from "./components/Header";
-import GameScreen from "./components/GameScreen";
-import ClickMe from "./components/ClickMe";
-import images from "./images.json";
-import "./App.css";
+// import React from "react";
+// import Header from "./components/Header";
+// import GameScreen from "./components/GameScreen";
+// import ClickMe from "./components/ClickMe";
+// import images from "./images.json";
+// import "./App.css";
 
 
 
@@ -27,14 +27,30 @@ import "./App.css";
 // }
 
 
-const App = () => (
-  <div className = "container-fluid mainContainer">
-    <Header/>
-    <GameScreen/>
-    <ClickMe/>
-  </div>
-);
+// const App = () => (
+//   <div className = "container-fluid mainContainer">
+//     <Header/>
+//     <GameScreen/>
+//     <ClickMe/>
+//   </div>
+// );
+
+
+// export default App;
+
+
+
+
+//THe Big Import
+import React from "react";
+import GameScreen from "./components/GameScreen";
+
+
+
+const App = props =>  <GameScreen/>;
 
 export default App;
+
+
 
 

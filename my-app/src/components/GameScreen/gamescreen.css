@@ -1,0 +1,11 @@
+.game-screen {
+  margin: 50px;
+  background: #e0a919;
+  max-height: 950px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+  justify-content: space-around;
+  align-content: flex-start;
+  overflow: auto;
+}

@@ -6,12 +6,14 @@ const Header = () => (
 	
   <div className="container-fluid">
    
-   <h1>Play My Clicky Game!</h1>
+   <h1>The Black Actors Memory Game</h1>
 
-   <h3>Click on any image to earn points, but don't click on any more than once!</h3>
+   <h2>Click on any image of the famous actors to earn points, but don't click on an actor more than once!</h2>
 
   </div>
 );
 
 export default Header;
+
+
 
