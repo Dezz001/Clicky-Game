@@ -1,33 +1,34 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import ClickMe from "../ClickMe";
 import images from "../../images.json";
 import "./gamescreen.css";
 
 class GameScreen extends Component {
+	
 	state = {
-		images,
 		message: "Click a photo below to begin the game. But click a photo once or you will lose the game.",
-		score: 0,
-		topScore: 0
+		images,
+		topScore: 0,
+		score: 0	
 	};
 	
 	handleClick = (id, clicked) => {
 
-		const imageOrder = this.state.images;
+		const hollywoodShuffle = this.state.images;
 
 		if (clicked) {
-			imageOrder.forEach((image, index) => {
-				imageOrder[index].clicked = false;
+			hollywoodShuffle.forEach((image, index) => {
+				hollywoodShuffle[index].clicked = false;
 			});
 			return this.setState({
-				image: imageOrder.sort(() => Math.random() - 0.5),
+				image: hollywoodShuffle.sort(() => Math.random() - 0.5),
 				score: 0
 			})
 		}
 		else {
-			imageOrder.forEach((image, index) => {
+			hollywoodShuffle.forEach((image, index) => {
 				if (id === image.id) {
-					imageOrder[index].clicked = true;
+					hollywoodShuffle[index].clicked = true;
 				}
 			});
 
@@ -38,28 +39,30 @@ class GameScreen extends Component {
 			const newTopScore = newScore > topScore ? newScore : topScore;
 
 			return this.setState({
-				image: imageOrder.sort(() => Math.random() - 0.5),
+				image: hollywoodShuffle.sort(() => Math.random() - 0.5),
 				score: newScore,
-				topScore: newTopScore,
+				topScore: newTopScore
 			})
 		}
 	};
 
 	render() {
 		return (
-			<div className="container-fluid mainCardContainer">
-				// <div className="gameMessage text-center">
-				// 	<p>{this.state.message}</p>
-				// </div>
-				<div className="gameScores text-center">
+			<div className="container-fluid">
+				
+				<div>
+					<p>{this.state.message}</p>
+				</div>
+				
+				<div>
+					<p>Top Score: {this.state.topScore}</p>
+				</div>				
+
+				<div>
 					<p>Score: {this.state.score}</p>
 				</div>
 
-				<div className="gameScores text-center">
-					<p>Top Score: {this.state.topScore}</p>
-				</div>
-
-				<div className="container">	
+				<div className="container-fluid">	
 					<div className="row">
 						{this.state.images.map(image => (
 							<ClickMe
@@ -78,4 +81,4 @@ class GameScreen extends Component {
 	}
 };
 
-export default GameScreen;
+export default GameScreen

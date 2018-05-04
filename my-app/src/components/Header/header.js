@@ -2,13 +2,16 @@ import React from "react";
 import "./header.css";
 
 
-const Jumbotron = () => (
+const Header = () => (
 	
-  <div className="container text-center">
+  <div className="container-fluid">
    
-   <h1 className="display-4">Play My Clicky Game!</h1>
+   <h1>Play My Clicky Game!</h1>
+
+   <h3>Click on any image to earn points, but don't click on any more than once!</h3>
 
   </div>
 );
 
-export default Jumbotron;
+export default Header;
+
