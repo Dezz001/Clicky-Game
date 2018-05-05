@@ -8,7 +8,7 @@ class Scores extends Component {
     animating: false
   };
 
-
+  // Working on rendering messages based on score, do not quite have it yet
   setGameMessages({ score, topScore }) {
     let newState = { animating: true };
     if (score === 12) {
@@ -38,7 +38,7 @@ class Scores extends Component {
       case "winner":
         return "You WON!"
       default:
-        return "Click Below to Play"
+        return ""
     }
   }
 

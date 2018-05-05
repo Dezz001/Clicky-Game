@@ -1,108 +1,3 @@
-// import React, {Component} from "react";
-// import ClickMe from "../ClickMe";
-// import images from "../../images.json";
-// import "./gamescreen.css";
-
-// class GameScreen extends Component {
-	
-// 	state = {
-// 		message: "Click a photo below to begin the game. But click a photo once or you will lose the game.",
-// 		images,
-// 		topScore: 0,
-// 		score: 0	
-// 	};
-	
-// 	handleClick = (id, clicked) => {
-
-// 		const hollywoodShuffle = this.state.images;
-
-// 		if (clicked) {
-// 			hollywoodShuffle.forEach((image, index) => {
-// 				hollywoodShuffle[index].clicked = false;
-// 			});
-// 			return this.setState({
-// 				image: hollywoodShuffle.sort(() => Math.random() - 0.5),
-// 				score: 0
-// 			})
-// 		}
-// 		else {
-// 			hollywoodShuffle.forEach((image, index) => {
-// 				if (id === image.id) {
-// 					hollywoodShuffle[index].clicked = true;
-// 				}
-// 			});
-
-// 			const {topScore, score} = this.state;
-			
-// 			const newScore = score + 1;
-			
-// 			const newTopScore = newScore > topScore ? newScore : topScore;
-
-// 			return this.setState({
-// 				image: hollywoodShuffle.sort(() => Math.random() - 0.5),
-// 				score: newScore,
-// 				topScore: newTopScore
-// 			})
-// 		}
-// 	};
-
-// 	render() {
-// 		return (
-// 			<div className="container-fluid">
-				
-// 				<div>
-// 					<p>{this.state.message}</p>
-// 				</div>
-				
-// 				<div>
-// 					<p>Top Score: {this.state.topScore}</p>
-// 				</div>				
-
-// 				<div>
-// 					<p>Score: {this.state.score}</p>
-// 				</div>
-
-// 				<div className="container-fluid">	
-// 					<div className="row">
-// 						{this.state.images.map(image => (
-// 							<ClickMe
-// 								key={image.id}
-// 								id={image.id}
-// 								name={image.name}
-// 								clicked={image.clicked}
-// 								image={image.image}
-// 								handleClick={this.handleClick}
-// 							/>
-// 						))}
-// 					</div>		
-// 				</div>
-// 			</div>
-// 		);
-// 	}
-// };
-
-// export default GameScreen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { Component } from "react";
 import images from "../../images.json";
 import Header from "../Header";
@@ -111,10 +6,6 @@ import ClickMe from "../ClickMe";
 import Container from "../Container";
 import NavBar from "../NavBar";
 import Footer from "../Footer";
-
-	
-
-	
 
 	
 
@@ -134,17 +25,15 @@ class GameScreen extends Component {
 	    })
 	  };
 	
-
+	  // Calculates scores
 	  handleCorrectGuess = imagesLeft => {
 	    const { topScore, score, left } = this.state;
 	    const increasedScore = score + 1;
 	    const newTopScore = increasedScore > topScore ? increasedScore : topScore;
-	    const newleft = left - 1;
 	    this.setState ({
 	      images: this.shufflePics(imagesLeft),
 	      score: increasedScore,
 	      topScore: newTopScore,
-	      left: newleft
 	    })
 	  };
 	
@@ -164,7 +53,7 @@ class GameScreen extends Component {
 	    })
 	  }
 	
-
+	  // Randomnize images
 	  shufflePics = images => {
 	    let currentIndex = images.length - 1;
 	    while (currentIndex > 0){
@@ -178,27 +67,21 @@ class GameScreen extends Component {
 	  };
 	
 
+	  // Shows new image patterns
 	  reset = images => {
 	    const resetImages = images.map(item => ({ ...item, clicked: false}) );
 	    return this.shufflePics(resetImages);
 	  }
 	
-
+	  // Checks images that have been clicked
 	  handleItemClick = id => {
-	    let correctGuess = false;
-	    
+	    let correctGuess = false;   
 	    const imagesLeft = this.state.images.map(item => {
 	      const newItem = { ...item };
 	      if (newItem.id === id) {
-	        //error handler >> ensure that the pic has not already been clicked:
 	        if(!newItem.clicked) {
 	          newItem.clicked = true;
 	          correctGuess = true;
-	
-
-	          if(this.state.score === 12) {
-	            return this.handleWin(this.state.images)
-	          }
 	        }
 	      }
 	      return newItem;
@@ -214,7 +97,6 @@ class GameScreen extends Component {
 	      <NavBar score={this.state.score} topScore={this.state.topScore} />
 	      <Header/>
 	
-
 	      <Container className="game-screen">
 	        {this.state.images.map(item => (      
 	          <ClickMe
@@ -223,20 +105,13 @@ class GameScreen extends Component {
 	            name={item.name}
 	            image={item.image}
 	            handleClick={this.handleItemClick}
-	            gameOver={this.state.lives !== 0 && this.state.topScore}
 	          />
 	        ))}
 	      </Container>
-	
-
 	      <Footer/>
 	    </div>
-	    );
-	
-
+	    );	
 	  }
-	
-
 	};
 	
 

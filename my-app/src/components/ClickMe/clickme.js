@@ -2,36 +2,10 @@ import React from "react";
 import "./clickme.css";
 
 
-// const ClickMe = props => (
-//     <div 
-// 	    className="container-fluid col-sm-6 col-md-4 col-lg-3" 
-// 	    // onClick={() => handleClick(props.id, props.clicked)} 
-// 	    key={props.id}>
-		    
-// 		    <img
-// 			    id={props.id}
-// 			    name={props.name}
-// 			    image={props.image}
-// 			    onClick={props.handleClick}
-// 		    />
-//     </div>
-// );
-
-// export default ClickMe;
-
-
-
-
-
-
-
-
-
-
 const ClickMe = props => (
   <div>
-    <div className={"click-item${props.gameOver ? 'gameOver' : ''}"} aria-label="click-item" onClick={() => props.handleClick(props.id)}>
-      <img className="pic-button" src={props.image} />
+    <div onClick={() => props.handleClick(props.id)}>
+      <img className="image-button" src={props.image} />
     </div>
 
     <div>

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Samuel L. Jackson",
     "clicked": false,
-    "image": "https://i1.wp.com/www.uselessdaily.com/wp-content/uploads/2017/08/Samuel-L-Jackson-Django-Unchained.jpg?resize=700%2C300&ssl=1"
+    "image": "https://ia.media-imdb.com/images/M/MV5BMTQ1NTQwMTYxNl5BMl5BanBnXkFtZTYwMjA1MzY1._V1_.jpg"
   },
   {
     "id": 2,
@@ -43,9 +43,9 @@
   },
     {
     "id": 8,
-    "name": "The Rock",
+    "name": "Morgan Freeman",
     "clicked": false,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dwayne_Johnson_2%2C_2013.jpg/800px-Dwayne_Johnson_2%2C_2013.jpg"
+    "image": "https://ia.media-imdb.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_.jpg"
   },
   {
     "id": 9,
@@ -55,9 +55,9 @@
   },
   {
     "id": 10,
-    "name": "Tyrese Gibson",
+    "name": "Sidney Poitier",
     "clicked": false,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/TyreseGibsonDec08.jpg"
+    "image": "http://theretroset.com/wp-content/uploads/2016/05/poitier-678x377.png"
   },
   {
     "id": 11,

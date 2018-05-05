@@ -3,10 +3,13 @@ import Scores from "../Scores";
 import "./navbar.css";
 
 const NavBar = props => (
-  <nav className="navbar navbar-inverse navbar-top">
+  <nav className="container-fluid navbar navbar-inverse navbar-top">
     <ul>
-      <li className="brand">
-        <a>African-American Actors</a>
+      <li className="container-fluid">
+        <a>The Black Actors Memory Game</a>
+      </li>
+      <li>
+		<p>Click on any famous actors to earn points, but do not click on an actor more than once or you will lose!</p>                                                                                          
       </li>
       
       <Scores score={props.score} topScore={props.topScore} />  
